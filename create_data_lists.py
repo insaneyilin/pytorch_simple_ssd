@@ -29,6 +29,8 @@ def get_args():
 
 def main():
     args = get_args()
+    if not os.path.exists(args.out_dir):
+        os.mkdir(args.out_dir)
     create_data_lists(args.voc07_path, voc12_path=None, \
                       output_folder=args.out_dir)
     return 0
